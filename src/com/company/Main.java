@@ -5,7 +5,9 @@ import com.company.animals.Cat;
 import com.company.animals.Dog;
 import com.company.animals.Duck;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -52,20 +54,33 @@ public class Main {
         duck.isTheBirdFlying();
         duck.showSpeed();
 
+        List<Dog> dogs = Dog.randomArray();
+        for (int i = 0; i < dogs.size(); i++) {
+            System.out.println(dogs.get(i));
+        }
+
         List<Dog> dogsHomless = Arrays.asList(new Dog[]{
                 Dog.ofHomeless(2),
                 Dog.ofHomeless(3),
                 Dog.ofHomeless(5)
         });
         System.out.println(dogsHomless.size());
-        System.out.println(dogsHomless.get(0));
-        System.out.println(dogsHomless.get(1));
-        System.out.println(dogsHomless.get(2));
+        for(Dog dogItem : dogsHomless){
+            System.out.println(dogItem);
+        }
 
-        List<Dog> dogs = Dog.randomArray();
-        System.out.println(dogs.get(0));
-        System.out.println(dogs.get(1));
-        System.out.println(dogs.get(2));
+        List<Dog> dogsLinkedList = new LinkedList<>();
+        dogsLinkedList.add(Dog.ofHomeless(10));
+        dogsLinkedList.add(Dog.ofHomeless(10));
+        dogsLinkedList.add(Dog.ofHomeless(10));
+        dogsLinkedList.add(Dog.ofHomeless(10));
+        dogsLinkedList.add(Dog.ofHomeless(10));
+
+        int indexLinkedList = 0;
+        while (indexLinkedList < dogsLinkedList.size()){
+            System.out.println(dogsLinkedList.get(indexLinkedList));
+            indexLinkedList++;
+        }
 
 
     }
