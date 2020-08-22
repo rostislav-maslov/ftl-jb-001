@@ -63,7 +63,7 @@ public class Main {
                 Dog.ofHomeless(new Animal.AnimalWeight(5, Animal.AnimalWeight.WeightType.KG))
         });
         System.out.println(dogsHomless.size());
-        for(Dog dogItem : dogsHomless){
+        for (Dog dogItem : dogsHomless) {
             System.out.println(dogItem);
             dogItem.setName(String.valueOf((new Random()).nextLong()));
             System.out.println(dogItem.getName());
@@ -77,24 +77,29 @@ public class Main {
         dogsLinkedList.add(Dog.ofHomeless(new Animal.AnimalWeight(10, Animal.AnimalWeight.WeightType.KG)));
 
         int indexLinkedList = 0;
-        while (indexLinkedList < dogsLinkedList.size()){
+        while (indexLinkedList < dogsLinkedList.size()) {
             System.out.println(dogsLinkedList.get(indexLinkedList));
             indexLinkedList++;
         }
 
-        for(int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             // SwitchExample.run();
         }
 
         System.out.println(duck.getMoveType());
         System.out.println(dog.getMoveType().getValue());
 
-        if(dog.getMoveType() == MoveType.WALK){
+        if (dog.getMoveType() == MoveType.WALK) {
             System.out.println("Может ходить");
         }
 
         StringExample.run();
         TypeConversion.run();
 
+        dog.setWeight(new Animal.AnimalWeight(10, Animal.AnimalWeight.WeightType.KG));
+        try {
+            dog.getWeight().setValue(-10);
+        } catch (Animal.WeightException ignore) {
+        }
     }
 }
